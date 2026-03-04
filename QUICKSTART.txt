@@ -1,0 +1,221 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║           💒 WEDDING INVITATION - SUPABASE RSVP QUICK START 💒             ║
+║                                                                            ║
+║                      Chandhu ♥ Santhi - April 2, 2026                    ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📋 WHAT YOU GET
+═══════════════════════════════════════════════════════════════════════════
+✅ Online RSVP form integrated with your wedding invitation
+✅ Real-time database storage with Supabase (free tier available)
+✅ Beautiful admin dashboard to view all responses
+✅ CSV export functionality for your records
+✅ Guest count tracking and attendance statistics
+
+
+🚀 5-MINUTE SETUP
+═══════════════════════════════════════════════════════════════════════════
+
+STEP 1: Create Supabase Account (2 minutes)
+   → Go to https://supabase.com
+   → Sign up for free
+   → Create a new project named "wedding-rsvp"
+   → Wait for project initialization (auto.com)
+   → Note: Save your database password somewhere secure
+
+STEP 2: Set Up Database Table (1 minute)
+   → In Supabase dashboard, go to SQL Editor
+   → Click "New query"
+   → Copy the SQL script from SUPABASE_SETUP_GUIDE.md
+   → Click "Run"
+   → ✅ Your table is created!
+
+STEP 3: Get Your Credentials (1 minute)
+   → In Supabase, go to Settings → API
+   → Copy your "Project URL" (looks like: https://xxxxx.supabase.co)
+   → Copy your "Anon Key" (long string starting with eyJ...)
+
+STEP 4: Update Configuration (1 minute)
+   → Open supabase-config.js in this folder
+   → Find the top lines with placeholders
+   → Paste your credentials there
+   → Save the file
+
+✨ DONE! Test your setup:
+   → Open invitation.html in your browser
+   → Fill out the RSVP form
+   → Submit
+   → You should see a success message!
+
+
+📊 VIEW YOUR RESPONSES
+═══════════════════════════════════════════════════════════════════════════
+
+Option 1: Admin Dashboard (Recommended)
+   → Open admin-dashboard.html in your browser
+   → See all responses with real-time statistics
+   → Filter by attending/declined
+   → Export to CSV with one click
+
+Option 2: Supabase Dashboard
+   → Log in to Supabase
+   → Go to Table Editor
+   → Select "rsvp_responses"
+   → View all data directly
+
+
+📁 FILES INCLUDED
+═══════════════════════════════════════════════════════════════════════════
+invitation.html          Main wedding invitation website (updated with RSVP)
+supabase-config.js      ⭐ Configuration file (UPDATE THIS with credentials)
+admin-dashboard.html    📊 View all RSVP responses and statistics
+SUPABASE_SETUP_GUIDE.md 📖 Detailed setup instructions
+.env.local.example      Template for environment variables
+.gitignore             Security - prevents committing sensitive files
+QUICKSTART.txt         This file!
+
+
+🔐 SECURITY TIPS
+═══════════════════════════════════════════════════════════════════════════
+1. ✅ DO: Update supabase-config.js with YOUR credentials
+2. ✅ DO: Keep your database password private
+3. ✅ DO: Share invitation.html with guests (not admin-dashboard.html)
+4. ❌ DON'T: Commit your Anon Key to public GitHub
+5. ❌ DON'T: Share your Supabase credentials in emails
+6. 🔄 IF COMPROMISED: Regenerate your Anon Key in Supabase settings
+
+
+🌐 DEPLOYING TO THE WEB
+═══════════════════════════════════════════════════════════════════════════
+Once you test locally, deploy your site:
+
+Option 1: GitHub Pages (FREE)
+   → Push files to GitHub repository
+   → Enable "Pages" in repository settings
+   → Your site becomes: yourname.github.io/wedding/
+
+Option 2: Netlify (FREE)
+   → Drag & drop your folder to https://netlify.com
+   → Get instant hosting with custom domain option
+
+Option 3: Vercel (FREE)
+   → Import GitHub repo to https://vercel.com
+   → Auto-deploy on every push
+
+Option 4: Traditional Hosting
+   → Upload files via FTP to your web host
+   → Works with any standard web hosting
+
+
+📱 RSVP FORM FIELDS
+═══════════════════════════════════════════════════════════════════════════
+Guest Name        (Required) - Full name of the guest
+Number of Guests  (Required) - How many guests including the respondent
+Attendance        (Required) - "Yes, attending" or "Unable to attend"
+Message           (Optional) - Blessings, well-wishes, or special notes
+
+All responses are automatically saved with:
+   • Timestamp of submission
+   • IP address (for analytics)
+   • User agent (browser/device info)
+
+
+📊 ADMIN DASHBOARD FEATURES
+═══════════════════════════════════════════════════════════════════════════
+Statistics Cards:
+   • Total Responses - All RSVP submissions
+   • Attending - Number of confirmed attendees
+   • Total Guests - Sum of all guest counts
+   • Declined - Number of declined invitations
+
+Response Table:
+   • Guest names
+   • Number of guests
+   • Attendance status (color-coded)
+   • Messages/blessings
+   • Submission timestamp
+
+Filters:
+   • All responses
+   • Attending only
+   • Declined only
+
+Export:
+   • CSV download for spreadsheet import
+   • Perfect for wedding planning
+
+
+⚠️ TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════
+
+ISSUE: "Supabase client failed to initialize"
+   → Check that supabase-config.js is in the same folder
+   → Verify SUPABASE_URL and SUPABASE_KEY in the file
+   → Open browser console (F12) for specific error
+
+ISSUE: Form submits but no success message
+   → Check browser console for errors (F12 → Console)
+   → Verify your credentials are pasted correctly
+   → Make sure you've run the SQL script in Supabase
+
+ISSUE: Admin dashboard shows "Could not load RSVP data"
+   → Verify supabase-config.js has correct credentials
+   → Check that the table "rsvp_responses" exists in Supabase
+   → Try refreshing the page
+
+ISSUE: Data not appearing in Supabase
+   → Log in to Supabase dashboard
+   → Go to Table Editor → rsvp_responses
+   → Check if table exists and has data
+   → Verify RLS policies allow inserts
+
+
+🎨 CUSTOMIZATION
+═══════════════════════════════════════════════════════════════════════════
+To add more fields to the RSVP form:
+
+1. Add HTML input in invitation.html (around line 1550)
+2. Update the doRsvp() function to include the new field
+3. Add a new column to the database with SQL ALTER TABLE
+4. Update admin-dashboard.html to display the new field
+
+
+📞 SUPPORT
+═══════════════════════════════════════════════════════════════════════════
+Supabase Docs:    https://supabase.com/docs
+Discord Support:  https://discord.supabase.com
+GitHub Issues:    Check for existing solutions
+
+
+✅ CHECKLIST
+═══════════════════════════════════════════════════════════════════════════
+□ Created Supabase account
+□ Created new project
+□ Ran SQL setup script
+□ Got Project URL and Anon Key
+□ Updated supabase-config.js with credentials
+□ Tested invitation.html locally
+□ Checked admin-dashboard.html shows responses
+□ Verified RSVP data in Supabase dashboard
+□ Deployed to web (optional)
+□ Shared invitation link with guests
+□ Started receiving RSVPs!
+
+
+🎉 YOU'RE ALL SET!
+═══════════════════════════════════════════════════════════════════════════
+Share your invitation with guests:
+   → If local: Send them the invitation.html file
+   → If deployed: Send them the URL of your wedding site
+   
+Monitor responses:
+   → Check admin-dashboard.html periodically
+   → Keep track of total attendees
+   → Download CSV for final guest list
+
+
+═══════════════════════════════════════════════════════════════════════════
+Made with love for Chandhu & Santhi's Wedding - April 2, 2026
+═══════════════════════════════════════════════════════════════════════════

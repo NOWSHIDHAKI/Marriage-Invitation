@@ -1,0 +1,47 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Git Ignore - DO NOT COMMIT SENSITIVE FILES
+# ═══════════════════════════════════════════════════════════════════════════
+
+# Environment Variables & Credentials
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Supabase Config with Real Credentials
+# (Only if you store credentials in a separate file)
+supabase-config-private.js
+supabase-credentials.json
+
+# Node/Package Manager
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build Outputs
+dist/
+build/
+.next/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary Files
+*.tmp
+*.temp
+~*
